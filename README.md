@@ -5,7 +5,7 @@ auf ein Quadrat mit einem einbeschriebenen viertel Kreis fallen.
 
 Aus der Anzahl der Tropfen innerhalb und auserhalb des virtel Kreises lässt sich PI berechnen:
 
-      PI = 4*TropfenImKreis/GesammtAnzahlTropfen
+      PI = 4 * TropfenImKreis / GesammtAnzahlTropfen
 
 ---------------------------------------------------------------------------------------------------------------------
 
