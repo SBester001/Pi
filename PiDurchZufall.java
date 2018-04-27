@@ -1,6 +1,12 @@
 import java.math.BigDecimal;
 import java.util.Random;
 
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+
 
 
 public class PiDurchZufall {
@@ -10,18 +16,39 @@ public class PiDurchZufall {
     
     long inCircle = 0;
     long outCircle = 0;
-   
+    
+    JFrame frame = new JFrame();
+    JPanel panel = new JPanel();
+    
+    
+   PiDurchZufall(){
+	   panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+	   
+	   JScrollPane scroll = new JScrollPane(panel);
+	   scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+	   scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+	   
+	   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	   frame.getContentPane().add(scroll);
+	   frame.setSize(800, 800);
+	   frame.setVisible(true);
+   }
     
     void regnen(){
         for (long i = 1; i <= tropfen; i++) {
             new Thr().start();
             if(i%10000 == 0){
-            	System.out.println("Nach " + (inCircle+outCircle)+ " Tropfen: " + new BigDecimal(4*((double)inCircle/(inCircle+outCircle))));  
+            	print("Nach " + (inCircle+outCircle)+ " Tropfen: " + new BigDecimal(4*((double)inCircle/(inCircle+outCircle))));  
             	System.gc();
             }
         }
         pi = new BigDecimal(4*((double)inCircle/tropfen));
-        System.out.println(pi);
+       print(""+pi);
+    }
+    
+    void print(String str){ 	
+    	panel.add(new JTextField(str));
+    	frame.validate();
     }
     
     public static void main(String[] args) {
