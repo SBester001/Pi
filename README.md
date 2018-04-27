@@ -15,3 +15,7 @@ falling on a square with a quarter circle inscribed in it.
 From the number of drops within and outside the quarter circle, PI can be calculated:
 
       PI = 4 * dropsInCircle / totalNumberOfDrops
+
+---------------------------------------------------------------------------------------------------------------------
+
+![Beipiel Bild](https://github.com/SBester001/Pi/blob/master/viertel_Kreis.png)
